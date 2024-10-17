@@ -1,0 +1,8 @@
+---- deploy ----
+dfx deploy icrc7 --argument '(record{ minting_account= opt record { owner = principal "ripjo-binnx-2gwst-bqo32-kxtpx-z4z54-62yzw-yitre-mv5ru-kclg6-hqe"; subaccount = opt blob "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00";  }; icrc7_supply_cap= null;icrc7_description= opt "Test Collection NFTs";tx_window= null; permitted_drift= null; icrc7_max_take_value= null;icrc7_max_memo_size= null;icrc7_symbol= "NC";icrc7_max_update_batch_size= null;icrc7_max_query_batch_size= null;icrc7_atomic_batch_transfers= null;icrc7_default_take_value= null;icrc7_logo= null;icrc7_name= "Test Collection";})'
+
+---- mint ----
+dfx canister call icrc7 icrc7_mint "(record{to= record {owner = principal \"ripjo-binnx-2gwst-bqo32-kxtpx-z4z54-62yzw-yitre-mv5ru-kclg6-hqe\"; subaccount = opt blob\"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\"; };  token_id=1; memo= null; from_subaccount= null; token_description = opt \"Test 1\"; token_logo = opt \"data:image/png;base64,$(base64 -i ./logo.png)\";token_name= null})"
+
+---- minting authority ----
+dfx canister call icrc7 icrc7_set_minting_authority '(record {owner = principal "zapsb-mlqs3-qzi2m-mvuxf-yjydl-5u7sm-ga2uq-lyr5i-uc3t7-qrnrs-pae"; subaccount = opt blob"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00";})'
